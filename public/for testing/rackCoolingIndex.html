@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Consumption YOY Growth</title>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chartdiv"></div>
+    <script>
+        am5.ready(function() {
+            var root = am5.Root.new("chartdiv");
+            root.setThemes([am5themes_Animated.new(root)]);
+            var chart = root.container.children.push(
+                am5xy.XYChart.new(root, {
+                    panX: true,
+                    panY: true,
+                    wheelX: "panX",
+                    wheelY: "zoomX",
+                    layout: root.verticalLayout
+                })
+            );
+            var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+            cursor.lineY.set("visible", false);
+            var xAxis = chart.xAxes.push(
+                am5xy.DateAxis.new(root, {
+                    maxDeviation: 0.2,
+                    baseInterval: { timeUnit: "day", count: 1 },
+                    renderer: am5xy.AxisRendererX.new(root, {}),
+                    tooltip: am5.Tooltip.new(root, {})
+                })
+            );
+            var yAxis = chart.yAxes.push(
+                am5xy.ValueAxis.new(root, {
+                    renderer: am5xy.AxisRendererY.new(root, {})
+                })
+            );
+            function createSeries(name, field) {
+                var series = chart.series.push(
+                    am5xy.LineSeries.new(root, {
+                        name: name,
+                        xAxis: xAxis,
+                        yAxis: yAxis,
+                        valueYField: field,
+                        valueXField: "date",
+                        tooltip: am5.Tooltip.new(root, {
+                            labelText: "{name}: {valueY}"
+                        })
+                    })
+                );
+                series.bullets.push(function() {
+                    return am5.Bullet.new(root, {
+                        sprite: am5.Circle.new(root, {
+                            radius: 5,
+                            fill: series.get("fill")
+                        })
+                    });
+                });
+                series.data.setAll(generateChartData());
+                series.appear(1000);
+                return series;
+            }
+            createSeries("Visits", "visits");
+            createSeries("Hits", "hits");
+            createSeries("Views", "views");
+            var legend = chart.children.push(am5.Legend.new(root, {}));
+            legend.data.setAll(chart.series.values);
+            chart.appear(1000, 100);
+            function generateChartData() {
+                var chartData = [];
+                var firstDate = new Date();
+                firstDate.setDate(firstDate.getDate() - 100);
+                firstDate.setHours(0, 0, 0, 0);
+                var visits = 1600;
+                var hits = 2900;
+                var views = 8700;
+                for (var i = 0; i < 15; i++) {
+                    var newDate = new Date(firstDate);
+                    newDate.setDate(newDate.getDate() + i);
+                    visits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+                    hits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+                    views += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+                    chartData.push({
+                        date: newDate.getTime(),
+                        visits: visits,
+                        hits: hits,
+                        views: views
+                    });
+                }
+                return chartData;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Server Rack with Base</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .server-rack-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .server-rack {
+            width: 300px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px 10px 0 0; /* Rounded top corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #222;
+        }
+
+        .server-unit {
+            background-color: #444;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            color: #fff;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .server-unit:last-child {
+            margin-bottom: 0;
+        }
+
+        .server-unit .status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+        }
+
+        .server-unit .status.offline {
+            background-color: #f44336;
+        }
+
+        .server-unit .status.maintenance {
+            background-color: #ffeb3b;
+        }
+
+        .rack-base {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 200px;
+            width: 340px; /* Slightly wider than the rack */
+            height: 20px;
+            /* background-color: #444; */
+            border-radius: 0 0 10px 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #222;
+            margin-top: -5px; 
+            position: relative; /* Positioning for the feet */
+        }
+
+        .rack-foot {
+            display: flex;
+            justify-content: space-between;
+            width: 20px;
+            background-color: #222;
+            bottom: -20px; /* Position below the base */
+            border: 2px solid #7b0b0b;
+        }
+
+        .rack-foot.left {
+            width: 20px;
+            height: 20px;
+        }
+
+        .rack-foot.right {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="server-rack-container">
+        <div class="server-rack">
+            <div class="server-unit">
+                <span>Server 1: 2004</span>
+                <div class="status"></div>
+            </div>
+            <div class="server-unit">
+                <span>Server 2: 00000000:0</span>
+                <div class="status offline"></div>
+            </div>
+            <div class="server-unit">
+                <span>Server 3: 00000000:0</span>
+                <div class="status maintenance"></div>
+            </div>
+            <div class="server-unit">
+                <span>Server 4: 00000000:0</span>
+                <div class="status"></div>
+            </div>
+        </div>
+        <div class="rack-base">
+            <div class="rack-foot left"></div> <!-- Left foot -->
+        <div class="rack-foot right"></div> <!-- Right foot -->
+        </div> <!-- Base of the rack -->
+        
+    </div>
+
+    <script>
+        // Optional JavaScript for dynamic behavior
+        const serverUnits = document.querySelectorAll('.server-unit');
+
+        serverUnits.forEach(unit => {
+            unit.addEventListener('click', () => {
+                alert(`Clicked: ${unit.querySelector('span').innerText}`);
+            });
+        });
+    </script>
+</body>
+</html>
