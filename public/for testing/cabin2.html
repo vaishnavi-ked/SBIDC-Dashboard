@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Energy Dashboard</title>
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.seat-charts.css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet" />
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  </head>
+
+  <body id="page-top" class="page-overview sidebar-toggled">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="overview.html">
+          <div class="sidebar-brand-icon">
+            <img src="img/KED_logo_PNG-fav.png" alt="logo" />
+          </div>
+          <div class="sidebar-brand-text mx-3">
+            <img src="img/logo.png" alt="logo" />
+          </div>
+        </a>
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0" />
+        <!-- Nav Item - Charts -->
+        <li class="nav-item active">
+            <a class="nav-link" href="Asset-management.html">
+                <i class="fa-solid fa-rectangle-list"></i>
+                <span>Form</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="capacity.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Rack Monitoring</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="buildings.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Reports And Trends</span></a>
+        </li>
+        <!-- Nav Item - Dashboard -->
+  
+        <!-- <li class="nav-item ">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Energy Dashboard</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="water.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Water Meter System</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard1.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span> Cold Room Temp</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard-FAS.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Fire Alarm System</span>
+          </a>
+        </li> -->
+        <!-- <li class="nav-item ">
+          <a class="nav-link" href="Asset-management.html">
+            <i class="fas fa-fw fa-map"></i>
+            <span>Asset Management</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="capacity.html">
+            <i class="fas fa-fw fa-map"></i>
+            <span>Capacity Dashboard</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="buildings.html">
+            <i class="fas fa-fw fa-map"></i>
+            <span>Buildings</span></a>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="cooling.html">
+            <i class="fas fa-fw fa-map"></i>
+            <span>Cooling</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="connectivity.html">
+            <i class="fas fa-fw fa-map"></i>
+            <span>Connectivity</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="power-capacity.html">
+            <i class="fas fa-fw fa-map"></i>
+            <span>Power</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="health-capacity.html">
+            <i class="fas fa-fw fa-map"></i>
+            <span>Health</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Energy Dashboard</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="water.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Water Meter System</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard1.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span> Cold Room Temp</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard-FAS.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Fire Alarm System</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="report.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Report Module</span>
+          </a>
+        </li> -->
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -->
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-bell fa-fw"></i>
+                  <!-- Counter - Alerts -->
+                  <span class="badge badge-danger badge-counter">3+</span>
+                </a>
+                <!-- Dropdown - Alerts -->
+                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="alertsDropdown">
+                  <h6 class="dropdown-header">
+                    Alerts Center
+                  </h6>
+                  <a class="dropdown-item d-flex align-items-center" href="server.html">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-file-alt text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">November 4, 2020</div>
+                      <span class="font-weight-bold">Server issue</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="cabin2.html">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-warning">
+                        <i class="fas fa-exclamation-triangle text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">November 4, 2020</div>
+                      Rack Temperature is High
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-warning">
+                        <i class="fas fa-exclamation-triangle text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">November 3, 2020</div>
+                      Warning: Switchboard - Generator Group
+                    </div>
+                  </a>
+                  <a class="dropdown-item text-center small text-gray-500" href="alarm-management.html">Show All Alerts</a>
+                </div>
+              </li>
+              <div class="topbar-divider d-none d-sm-block"></div>
+  
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <img class="img-scnd-logo" src="img/logo-trid.png" />
+                </a>
+              </li>
+              <div class="topbar-divider d-none d-sm-block"></div>
+  
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Supervisor</span>
+                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Topbar -->
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+              <h1 class="m-0 font-weight-bold text-primary">
+                <!-- <a href="overview.html">Overview</a> / <a href="buildings.html">Buildings</a>/ <a href="buildings.html#building2">Building 2</a> / <a href="floors2.html#powerSts">Floors</a> / Rack Details -->
+                
+              </h1>
+              <!-- <a
+                href="#"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                ><i class="fas fa-download fa-sm text-white-50"></i> Generate
+                Report</a
+              > -->
+            </div>
+
+            <!-- Content Row -->
+            <div class="row">
+              <div class="col-xl-6 col-lg-6">
+                
+                <div class="card shadow mb-4">
+                  <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                  >
+                    <h6 class="m-0 font-weight-bold text-primary">
+                      Rack Elevation of Rack_A1_1
+                    </h6>
+                    <div id="button-sec">
+                      <button id="rack_power_btn" title="Show rack power" class="chart-button"><i
+                          class="fas fa-fw fa-bolt"></i></button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="serverRak">
+                        <div id="rackSec"></div>
+                      </div>
+                    <!-- Servers will be dynamically inserted here -->
+                    <!-- <div class="server-rack" id="serverRack">
+                        <div class="serverRak">
+                            <div id="rackSec"></div>
+                          </div>
+                    </div> -->
+                   
+                    <!-- Servers will be dynamically inserted here -->
+                    <!-- <div class="server-rack-container">
+                        <div class="server-rack" id="serverRack">
+                            <div class="serverRak">
+                                <div id="rackSec"></div>
+                              </div>
+                        </div>
+                        <div class="rack-base">
+                            <div class="rack-foot left"></div>
+                            <div class="rack-foot right"></div>
+                        </div>
+                    </div> -->
+                    <div id="rack-elevation" class="chart-legend breakdown-chart">
+                      <span><span class="green-legend"></span> Below 500 Wh  </span>
+                      <span><span class="yellow-legend"></span> 500-800 Wh</span>
+                      <span><span class="red-legend"></span> Above 800 Wh </span>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="col-xl-6 col-lg-6">
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                      Properties
+                    </h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="serverRak">
+                      <table id="property">
+                        <tr>
+                          <td>Type :</td>
+                          <td>Rack</td>
+                        </tr>
+                        <tr>
+                          <td>Display Name :</td>
+                          <td>Rack_A_1</td>
+                        </tr>
+                        <tr>
+                          <td>Machine Name :</td>
+                          <td>Rack 40kw</td>
+                        </tr>
+                        <tr>
+                          <td>Manufacture :</td>
+                          <td>APC</td>
+                        </tr>
+                        <tr>
+                          <td>Model :</td>
+                          <td>OM-5103</td>
+                        </tr>
+                        <tr>
+                          <td>IP Address :</td>
+                          <td>10.0.8.XX</td>
+                        </tr>
+                        <tr>
+                          <td>Location :</td>
+                          <td>Mumbai</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card shadow mb-4">
+                  <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                  >
+                    <h6 class="m-0 font-weight-bold text-primary">Power</h6>
+                  </div>
+                  <div class="card-body">
+                    <table id="property">
+                      <tr>
+                        <td>Total :</td>
+                        <td>500 kW</td>
+                      </tr>
+                      <tr class="bb1">
+                        <td>Warning Threshold:</td>
+                        <td>600 kW </td>
+                      </tr>
+                      <tr class="emptyRow"></tr>
+                      
+                      <!-- <tr>
+                        <th>Phase 2</th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <td>Current :</td>
+                        <td>15.9 A</td>
+                      </tr>
+                      <tr>
+                        <td>Average Current :</td>
+                        <td>15.7 A</td>
+                      </tr>
+                      <tr>
+                        <td>Voltage :</td>
+                        <td>120 V</td>
+                      </tr>
+                      <tr>
+                        <td>Power :</td>
+                        <td>1.7 kW</td>
+                      </tr>
+                      <tr>
+                        <td>Average Power :</td>
+                        <td>1.7 kW</td>
+                      </tr> -->
+                    </table>
+                    <div class="progressBar">
+                      <div class="pb1">
+                        <div class="build_label"><a href="#">Space Available </a></div>
+                        <div class="pBar" data-from="0" data-to="20" data-color="#1cc88999,#f6c23e99,#e74a3b99"></div>
+                        <!-- <div class="value_label"> &nbsp;&nbsp;124231 kWh</div> -->
+                      </div>
+                      <div class="pb1">
+                        <div class="build_label"><a href="#">Rack Occupied</a></div>
+                        <div class="pBar" data-from="0" data-to="28" data-color="#1cc88999,#f6c23e99,#e74a3b99"></div>
+                        <!-- <div class="value_label"> &nbsp;&nbsp;423432 kWh</div> -->
+                      </div>
+                      <!-- <div class="pb1"> -->
+                        <!-- <div class="build_label"><a href="energy.html">Consumed Power (kW)</a></div>
+                        <div class="pBar" data-from="0" data-to="75" data-color="#1cc88999,#f6c23e99,#e74a3b99"></div> -->
+                        <!-- <div class="value_label"> &nbsp;&nbsp;913423 kWh</div> -->
+                      <!-- </div> -->
+                    </div>
+                    <div class="chart-legend breakdown-chart">
+                      <span><span class="green-legend"></span> 0-30 % </span>
+                      <span><span class="yellow-legend"></span> 30-50 %</span>
+                      <span><span class="red-legend"></span> 50-100 %</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card shadow mb-4">
+                  <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                  >
+                    <h6 class="m-0 font-weight-bold text-primary">Rack Temperature</h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="serverRak">
+                      <table id="property">
+                        <!-- <tr>
+                          <th>#</th>
+                          <th>Current</th>
+                          <th>Capacity</th>
+                          <th>Usabile</th>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>13.2 A</td>
+                          <td>150 A</td>
+                          <td>120 A</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>17.7 A</td>
+                          <td>150 A</td>
+                          <td>120 A</td>
+                        </tr> -->
+                        <!-- <tr>
+                          <th>Sensor 1</th>
+                          <th></th>
+                        </tr>
+                        <tr>
+                          <td>Current Temperature :</td>
+                          <td>20 °C</td>
+                        </tr>
+                        <tr>
+                          <td>Current Temperature :</td>
+                          <td>20 °C</td>
+                        </tr> -->
+                        <tr>
+                          <td>Current Temperature :</td>
+                          <td>16 °C</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row mg-top-50">
+              <div class="col-xl-2 col-lg-2"></div>
+
+              <div class="shadow-wrapper">
+                <div class="shadowBox">
+                  <div>&nbsp;</div>
+                </div>
+              </div>
+              <div class="box-wrapper">
+                <div class="box-faces">
+                  <div class="box-face box-face--is-front">
+                    <p>
+                      <i class="icon-rocket icon-4x"></i>
+                    </p>
+                  </div>
+                  <div class="box-face box-face--is-back">
+                    <p>
+                      <i class="icon-rocket icon-4x"></i>
+                    </p>
+                  </div>
+                  <div class="box-face box-face--is-top">&nbsp;</div>
+                  <div class="box-face box-face--is-server1 server">&nbsp;</div>
+                  <div class="box-face box-face--is-server2 server">&nbsp;</div>
+                  <div class="box-face box-face--is-server3 server">&nbsp;</div>
+                  <div class="box-face box-face--is-server4 server">&nbsp;</div>
+                  <div class="box-face box-face--is-server5 server">&nbsp;</div>
+                  <div class="box-face box-face--is-server6 server">&nbsp;</div>
+                  <div class="box-face box-face--is-server7 server">&nbsp;</div>
+                  <div class="box-face box-face--is-bottom">&nbsp;</div>
+                  <div class="box-face box-face--is-left">
+                    <p>
+                      <i class="icon-rocket icon-4x"></i>
+                    </p>
+                  </div>
+                  <div class="box-face box-face--is-right">
+                    <p>
+                      <i class="icon-rocket icon-4x"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="row">
+              <div class="col-xl-4 col-lg-4">
+                <div class="card shadow mb-4">
+                  <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                  >
+                    <h6 class="m-0 font-weight-bold text-primary">
+                      Monthly Power Generation
+                    </h6>
+                  </div>
+                  <div class="card-body">
+                    <div id="total_gauge"></div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- Content Row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Your Website 2022</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div
+      class="modal fade"
+      id="logoutModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button
+              class="close"
+              type="button"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Select "Logout" below if you are ready to end your current session.
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-secondary"
+              type="button"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Resources -->
+    <!-- amCharts javascript sources -->
+    <script
+      type="text/javascript"
+      src="https://www.amcharts.com/lib/3/amcharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.amcharts.com/lib/3/serial.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.amcharts.com/lib/3/themes/dark.js"
+    ></script>
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/dark.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/jquery.pBar.min.js"></script>
+    <script type="text/JavaScript">
+      $(function(){
+         var hash = $(location).attr('hash').substr(1);
+         $('body').addClass(hash);
+      });
+    </script>
+    <script type="text/JavaScript">
+            $(function () {
+              var hash = $(location).attr('hash').substr(1);
+            // var cars = ["1", "2", "3", "4", "5", "6","7","8", "9", "10"];
+
+      var j;
+            // alert(hash);
+            if(hash == "full"){
+              j = 20;
+            }
+            else if(hash == "aboveAverage"){
+              j= 15;
+            }
+            else if(hash == "average"){
+              j= 10;
+            }
+            else if(hash == "belowAverage"){
+              j= 7;
+            }
+            else if(hash == "below"){
+              j= 3;
+            }
+            else{
+              j=0;
+            }
+            var i;
+            var text = "";
+            for (i = 0; i < j; i++) {
+              text +=
+                "<div class='severRow'><div class='serverList'>Server-" +
+                i +
+                "</div><div class='serverCount'>" +
+                i +
+                "</div></div>";
+            }
+            document.getElementById("serverSec").innerHTML = text;
+            });
+    </script>
+    <!-- amCharts javascript code -->
+    <script type="text/javascript">
+      AmCharts.makeChart("powerConsmp", {
+        type: "serial",
+        categoryField: "date",
+        dataDateFormat: "YYYY-MM-DD HH",
+        processCount: 994,
+        processTimeout: -1,
+        theme: "dark",
+        categoryAxis: {
+          minPeriod: "hh",
+          parseDates: true,
+          minorTickLength: -1,
+        },
+        chartCursor: {
+          enabled: true,
+          categoryBalloonDateFormat: "JJ:NN",
+        },
+        chartScrollbar: {
+          enabled: true,
+        },
+        trendLines: [],
+        graphs: [
+          {
+            bullet: "round",
+            id: "AmGraph-1",
+            title: "Phase 1 Power",
+            valueField: "column-1",
+          },
+          {
+            bullet: "square",
+            id: "AmGraph-2",
+            title: "Phase 2 Power",
+            valueField: "column-2",
+          },
+          {
+            id: "AmGraph-10",
+            title: "Total Power",
+            valueField: "column-4",
+          },
+          {
+            fixedColumnWidth: -2,
+            id: "AmGraph-12",
+            legendColor: "#FFFF00",
+            negativeLineColor: "#FFFF00",
+            title: "Total Capacity",
+            valueField: "column-5",
+          },
+        ],
+        guides: [],
+        valueAxes: [
+          {
+            id: "ValueAxis-1",
+            title: "Power (kW)",
+          },
+        ],
+        allLabels: [],
+        balloon: {},
+        legend: {
+          enabled: true,
+          useGraphSettings: true,
+        },
+        titles: [
+          {
+            id: "Title-1",
+            size: 15,
+            text: "",
+          },
+        ],
+        dataProvider: [
+          {
+            date: "2014-03-01 08",
+            "column-1": "24",
+            "column-2": 21,
+            "column-4": 28,
+            "column-5": 27,
+          },
+          {
+            date: "2014-03-01 09",
+            "column-1": "24.5",
+            "column-2": 19,
+            "column-4": 26,
+            "column-5": 26,
+          },
+          {
+            date: "2014-03-01 10",
+            "column-1": "25",
+            "column-2": 20,
+            "column-4": 28,
+            "column-5": 28,
+          },
+          {
+            date: "2014-03-01 11",
+            "column-1": "24",
+            "column-2": 20,
+            "column-4": 26,
+            "column-5": 26,
+          },
+          {
+            date: "2014-03-01 12",
+            "column-1": "23.5",
+            "column-2": 20,
+            "column-4": 26,
+            "column-5": 27,
+          },
+          {
+            date: "2014-03-01 13",
+            "column-1": "23.8",
+            "column-2": 19,
+            "column-4": 27,
+            "column-5": 28,
+          },
+          {
+            date: "2014-03-01 14",
+            "column-1": "25",
+            "column-2": 19,
+            "column-4": 27,
+            "column-5": 26,
+          },
+        ],
+      });
+
+      AmCharts.makeChart("panelConsmp", {
+        type: "serial",
+        categoryField: "date",
+        dataDateFormat: "YYYY-MM-DD HH",
+        processCount: 994,
+        processTimeout: -1,
+        theme: "dark",
+        categoryAxis: {
+          minPeriod: "hh",
+          parseDates: true,
+          minorTickLength: -1,
+        },
+        chartCursor: {
+          enabled: true,
+          categoryBalloonDateFormat: "JJ:NN",
+        },
+        chartScrollbar: {
+          enabled: true,
+        },
+        trendLines: [],
+        graphs: [
+          {
+            id: "AmGraph-13",
+            title: "Panel 1 Current",
+            valueField: "column-1",
+          },
+          {
+            id: "AmGraph-14",
+            title: "Panel 2 Current",
+            valueField: "column-2",
+          },
+        ],
+        guides: [],
+        valueAxes: [
+          {
+            id: "ValueAxis-1",
+            title: "Amps",
+          },
+        ],
+        allLabels: [],
+        balloon: {},
+        legend: {
+          enabled: true,
+          useGraphSettings: true,
+        },
+        titles: [
+          {
+            id: "Title-1",
+            size: 15,
+            text: "",
+          },
+        ],
+        dataProvider: [
+          {
+            date: "2014-03-01 08",
+            "column-1": 18,
+            "column-2": 14,
+          },
+          {
+            date: "2014-03-01 09",
+            "column-1": 16,
+            "column-2": 14,
+          },
+          {
+            date: "2014-03-01 10",
+            "column-1": 16,
+            "column-2": 12,
+          },
+          {
+            date: "2014-03-01 11",
+            "column-1": 18,
+            "column-2": 12,
+          },
+          {
+            date: "2014-03-01 12",
+            "column-1": 17,
+            "column-2": 13,
+          },
+          {
+            date: "2014-03-01 13",
+            "column-1": 17,
+            "column-2": 13,
+          },
+          {
+            date: "2014-03-01 14",
+            "column-1": 17,
+            "column-2": 12,
+          },
+        ],
+      });
+      
+        $("#rackSec").load("rack.html");
+        $("#rack_power_btn").click(function () {
+              $(".serverRak").toggleClass('firstView');
+              console.log('clicked');
+            });
+            $('#rack_power_btn').trigger('click');
+            console.log('clicked by me ');
+    </script>
+<!-- <script>
+    const rackSize = 40;
+        let servers = [];
+        let chart;
+
+        function generateServers() {
+            for (let i = 1; i <= rackSize; i++) {
+                let powerConsumption = Math.floor(Math.random() * 1000);
+                let status = powerConsumption < 500 ? "green" : powerConsumption < 800 ? "yellow" : "red";
+                servers.push({ id: i, name: `Server ${i}`, power: powerConsumption, status });
+            }
+        }
+
+        function renderServers() {
+            const rack = document.getElementById("serverRack");
+            const serverNumbers = document.getElementById("serverNumbers");
+            rack.innerHTML = "";
+            serverNumbers.innerHTML = "";
+            
+            servers.forEach((server) => {
+                let numberDiv = document.createElement("div");
+                numberDiv.textContent = server.id;
+                serverNumbers.appendChild(numberDiv);
+                
+                let serverDiv = document.createElement("div");
+                serverDiv.className = "server-unit";
+                serverDiv.style.backgroundColor = server.status;
+                serverDiv.innerHTML = `
+                    <span>${server.name}: ${server.power} Wh</span>
+                `;
+                rack.appendChild(serverDiv);
+            });
+        }
+
+        $("#rackSec").load("rack.html");
+        $("#rack_power_btn").click(function () {
+              $(".serverRak").toggleClass('firstView');
+            });
+            $('#rack_power_btn').trigger('click');
+</script> -->
+      </body>
+</html>
