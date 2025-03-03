@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <style>
+        .server-rack-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+        .server-column {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-right: 10px;
+        }
+        .server-column div {
+            padding: 5px;
+            text-align: right;
+            font-weight: bold;
+        }
+        .server-rack {
+            display: flex;
+            flex-direction: column-reverse;
+            border: 2px solid black;
+            padding: 10px;
+            width: 150px;
+            min-height: 400px;
+        }
+        .server-unit {
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin: 2px;
+            display: flex;
+            justify-content: space-between;
+            background-color: lightgray;
+            cursor: pointer;
+        }
+        #chartdiv {
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="server-rack-container">
+        <div class="server-column" id="serverNumbers"></div>
+        <div class="server-rack" id="serverRack"></div>
+        <div id="chartdiv"></div>
+    </div>
+    
+    <script>
+        const rackSize = 40;
+        let servers = [];
+
+        function generateServers() {
+            for (let i = 1; i <= rackSize; i++) {
+                let powerConsumption = Math.floor(Math.random() * 1000);
+                let status = powerConsumption < 500 ? "green" : powerConsumption < 800 ? "yellow" : "red";
+                servers.push({ id: i, name: `Server ${i}`, power: powerConsumption, status });
+            }
+        }
+
+        function renderServers() {
+            const rack = document.getElementById("serverRack");
+            const serverNumbers = document.getElementById("serverNumbers");
+            rack.innerHTML = "";
+            serverNumbers.innerHTML = "";
+            
+            servers.forEach((server) => {
+                let numberDiv = document.createElement("div");
+                numberDiv.textContent = server.id;
+                serverNumbers.appendChild(numberDiv);
+                
+                let serverDiv = document.createElement("div");
+                serverDiv.className = "server-unit";
+                serverDiv.style.backgroundColor = server.status;
+                serverDiv.innerHTML = `<span>${server.name}: ${server.power} Wh</span>`;
+                rack.appendChild(serverDiv);
+            });
+        }
+
+        function renderChart() {
+            am5.ready(function() {
+                let root = am5.Root.new("chartdiv");
+                root.setThemes([am5themes_Animated.new(root)]);
+                
+                let chart = root.container.children.push(
+                    am5xy.XYChart.new(root, {
+                        panX: true,
+                        panY: true,
+                        wheelX: "panX",
+                        wheelY: "zoomX",
+                        pinchZoomX: true
+                    })
+                );
+                let xAxis = chart.xAxes.push(
+                    am5xy.CategoryAxis.new(root, {
+                        categoryField: "name",
+                        renderer: am5xy.AxisRendererX.new(root, {})
+                    })
+                );
+                let yAxis = chart.yAxes.push(
+                    am5xy.ValueAxis.new(root, { renderer: am5xy.AxisRendererY.new(root, {}) })
+                );
+                let series = chart.series.push(
+                    am5xy.ColumnSeries.new(root, {
+                        name: "Power Consumption",
+                        xAxis: xAxis,
+                        yAxis: yAxis,
+                        valueYField: "power",
+                        categoryXField: "name"
+                    })
+                );
+                xAxis.data.setAll(servers);
+                series.data.setAll(servers);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            generateServers();
+            renderServers();
+            renderChart();
+        });
+    </script>
+</body>
+</html>

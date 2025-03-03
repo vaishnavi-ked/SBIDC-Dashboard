@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Energy Dashboard</title>
+        <!-- Custom fonts for this template-->
+        <link rel="stylesheet" type="text/css" href="public/css/jquery.seat-charts.css">
+        <link href="public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet" />
+        <!-- Custom styles for this template-->
+        <link href="public/css/sb-admin-2.min.css" rel="stylesheet" />
+        <link href="public/css/custom.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </head>
+
+    <body id="page-top" class="page-overview sidebar-toggled">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="overview.html">
+                    <div class="sidebar-brand-icon">
+                        <img src="public/img/KED_logo_PNG-fav.png" alt="logo" />
+                    </div>
+                    <div class="sidebar-brand-text mx-3">
+                        <img src="public/img/logo.png" alt="logo" />
+                    </div>
+                </a>
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0" />
+                <!-- Nav Item - Charts -->
+                <!-- <li class="nav-item ">
+                    <a class="nav-link" href="overview.html">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Overview</span></a>
+                </li> -->
+                <!-- Nav Item - Dashboard -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="capacity.html">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span> Dashboard</span></a>
+                </li> -->
+                <!-- <li class="nav-item">
+                                                                  <a class="nav-link" href="water.html">
+                                                                    <i class="fas fa-fw fa-table"></i>
+                                                                    <span>Water Meter System</span></a
+                                                                  >
+                                                                </li> -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="newform.html">
+                        <i class="fa-solid fa-rectangle-list"></i>
+                        <span>Form</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Rack Monitoring</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="report.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Reports And Trends</span></a>
+                </li>
+                <!-- <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="cooling.html">
+                        <i class="fas fa-fw fa-map"></i>
+                        <span>Cooling</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="connectivity.html">
+                        <i class="fas fa-fw fa-map"></i>
+                        <span>Connectivity</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="power-capacity.html">
+                        <i class="fas fa-fw fa-map"></i>
+                        <span>Power</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="health-capacity.html">
+                        <i class="fas fa-fw fa-map"></i>
+                        <span>Health</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Energy Dashboard</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="water.html">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Water Meter System</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard1.html">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span> Cold Room Temp</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard-FAS.html">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Fire Alarm System</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="report.html">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Report Module</span>
+                    </a>
+                </li> -->
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block" />
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+            </ul>
+            <!-- End of Sidebar -->
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#">
+                                    <img class="img-scnd-logo" src="public/img/kedlogo.png" />
+                                </a>
+                            </li>
+
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Supervisor</span>
+                                    <img class="img-profile rounded-circle"
+                                        src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Activity Log
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End of Topbar -->
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex align-items-center justify-content-end mb-4">
+                            <!-- <h1 class="m-0 font-weight-bold text-primary">
+                                <a href="overview.html">Overview</a> / <a href="buildings.html">Buildings</a>/ <a href="buildings.html#building2">Building 2</a> / Floor 2
+                            </h1> -->
+                            <div class="more-options-sec">
+                                <div class="floorSelect">
+                                    <label>Select Floor</label>
+                                    <select class="form-control" name="floor" id="floors" onchange="updateServers()">
+                                        <option value="floor1">Floor 1</option>
+                                        <option value="floor2" selected>Floor 2</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="serverSelect">
+                                    <label>Select Server</label>
+                                    <select class="form-control" name="server" id="servers" onchange="handleSelectionChange()">
+                                        <!-- Options will be dynamically populated -->
+                                    </select>
+                                </div>
+                                <div class="more">
+                                    <button id="more-btn" class="more-btn">
+                                        <span class="more-dot"></span>
+                                        <span class="more-dot"></span>
+                                        <span class="more-dot"></span>
+                                    </button>
+                                    <!-- <div class="more-menu">
+                                        <div class="more-menu-caret">
+                                            <div class="more-menu-caret-outer"></div>
+                                            <div class="more-menu-caret-inner"></div>
+                                        </div>
+                                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                                            
+                                            <li class="more-menu-item" role="presentation">
+                                                <a href="energy.html" class="more-menu-btn">Energy Dashboard</a>
+                                            </li>
+                                            <li class="more-menu-item" role="presentation">
+                                                <a href="build-capacity.html" class="more-menu-btn">Capacity Dashboard</a>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!-- <a
+                        href="#"
+                        class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                        ><i class="fas fa-download fa-sm text-white-50"></i> Generate
+                        Report</a
+                        > -->
+                        </div>
+                        <!-- Content Row -->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="row">
+                                    <div class="col-xl-9 col-lg-9">
+
+                                        <div class="floorLayout">
+                                            <select id="dataTab" class="dataTab form-control">
+                                                <option data-action="zero" disabled="disabled" value="" selected>-- Select option
+                                                    for status --</option>
+                                                <option data-action="first" value="tempStatusLink" >Temperature/Cooling Status
+                                                </option>
+                                                <option data-action="second" value="powerStatusLink">Power Status
+                                                </option>
+                                                <!-- <option data-action="second" value="coolingStatusLink">Cooling Status
+                                                </option> -->
+                                                <!-- <option data-action="third" value="powerDashLink">PUE</option> -->
+                                            </select>
+                                            <select id="customerFilter" class="customerFilter form-control">
+                                                <option data-action="zero" disabled="disabled" value="" selected>-- Filter By Customer --</option>
+                                                <option data-action="first" value="custom1">Customer 1
+                                                </option>
+                                                <option data-action="second" value="custom2">Customer 2
+                                                </option>
+                                                <!-- <option data-action="second" value="coolingStatusLink">Cooling Status
+                                                                                            </option> -->
+                                                <!-- <option data-action="third" value="powerDashLink">PUE</option> -->
+                                            </select>
+                                            <div id="seat-map">
+                                                <!-- <div class="front-indicator">Front</div> -->
+                                                <div class="seat-map-rack" style="display: none;"></div>
+                                            </div>
+                                            <a href="#tempSts" class="btn btn-danger tempbtn btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                </span>
+                                                <span class="text">Temperature Status Alert</span>
+                                            </a>
+                                            <a href="#powerSts" class="btn btn-danger powerbtn btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                </span>
+                                                <span class="text">Power Status Alert</span>
+                                            </a>
+                                        </div>
+                                        <div id="legend" class="seatCharts-legend">
+                                            <ul class="seatCharts-legendList">
+                                                <li class="seatCharts-legendItem">
+                                                    <div class="seatCharts-seat seatCharts-cell available high-class">
+                                                    </div>
+                                                    <span class="seatCharts-legendDescription powerLegnd">Above 1000
+                                                        W</span>
+                                                    <span class="seatCharts-legendDescription tempLegnd">Above
+                                                        26°C</span>
+                                                </li>
+                                                <li class="seatCharts-legendItem">
+                                                    <div class="seatCharts-seat seatCharts-cell available blue-class">
+                                                    </div>
+                                                    <span class="seatCharts-legendDescription powerLegnd">500 - 1000
+                                                        W</span>
+                                                    <span class="seatCharts-legendDescription tempLegnd">16-22°C</span>
+                                                </li>
+                                                <li class="seatCharts-legendItem">
+                                                    <div class="seatCharts-seat seatCharts-cell available low-class">
+                                                    </div>
+                                                    <span class="seatCharts-legendDescription powerLegnd">100 - 500
+                                                        W</span>
+                                                    <span class="seatCharts-legendDescription tempLegnd">23-26°C</span>
+                                                </li>
+                                                <li class="seatCharts-legendItem">
+                                                    <div class="seatCharts-seat seatCharts-cell available rack-class">
+                                                    </div>
+                                                    <span class="seatCharts-legendDescription powerLegnd">Offline</span>
+                                                    <span class="seatCharts-legendDescription tempLegnd">Offline</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-3">
+                                        <div class="booking-details">
+                                            <h2>Rack Details</h2>
+                                            <div class="rackData">
+                                                <table class="rackProperty" id="rackDetails">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Name: </th>
+                                                            <td> <a href="cabin.html#full">Rack_<span
+                                                                        class="rackName"></span></a> </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Type: </th>
+                                                            <td> Rack </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Status</th>
+                                                            <td id="rackStatus" class="online">Online</td>
+                                                        </tr>
+                                                        <tr class="bb1">
+                                                            <th>MCCB Rating:</th>
+                                                            <td style="display: block;">123A</td>
+                                                        </tr>
+                                                        <!-- <tr class="bb1">
+                                                            <td>Devices :</td>
+                                                            <td>122</td>
+                                                        </tr> -->
+                                                        <tr class="emptyRow"></tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="rackProperty" id="powerStats">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Power Status</th>
+                                                            <th></th>
+                                                        </tr>
+                                                        <!-- <tr>
+                                                            <td>Current :</td>
+                                                            <td>15.9 A</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Average Current :</td>
+                                                            <td>15.7 A</td>
+                                                        </tr>
+                                                        <tr> -->
+                                                            <td>Rated Power :</td>
+                                                            <td id="voltValue">120 Kw</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Actual Power</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Source 1 :</td>
+                                                            <td id="powerValue"><a href="cabin.html">1.7 kW</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Source 2 :</td>
+                                                            <td id="powerValue"><a href="cabin.html">1.7 kW</a></td>
+                                                        </tr>
+                                                        <!-- <tr class="bb1">
+                                                            <td>Average Power :</td>
+                                                            <td id="avgValue">1.7 kW</td>
+                                                        </tr> -->
+                                                        <tr class="emptyRow"></tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="rackProperty" id="tempStats">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Temperature Status</th>
+                                                            <th></th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Top</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Relative Humidity :</td>
+                                                            <td id="humidityValue">17%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Temperature :</td>
+                                                            <td id="temperatureValue"><a href="cabin.html">19°C</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Medium</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Relative Humidity :</td>
+                                                            <td id="humidityValue">17%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Temperature :</td>
+                                                            <td id="temperatureValue"><a href="abin.html">19°C</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Low</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Relative Humidity :</td>
+                                                            <td id="humidityValue">17%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Temperature :</td>
+                                                            <td id="temperatureValue"><a href="cabin.html">19°C</a></td>
+                                                        </tr>
+                                                        <!-- <tr>
+                                                            <td>Temperature 2 :</td>
+                                                            <td>84°C</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Temperature 3 :</td>
+                                                            <td>84°C</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Temperature 4 :</td>
+                                                            <td>84°C</td>
+                                                        </tr> -->
+                                                    </tbody>
+                                                </table>
+                                                <!-- <h3> Selected Racks (<span id="counter">0</span>):</h3>
+                                                <ul id="selected-seats">
+                                                </ul>
+                                                Total: <b>kW<span id="total"></span></b>
+                                                <button class="checkout-button">View Rack Details &raquo;</button> -->
+                                                
+                                            </div>
+                                            <a href="cabin.html" class="btn btn-primary rackLink" >Explore Rack_<span class="rackName"></span> </a>
+                                            
+                                                <!-- <a href="3dFloor.html" class="btn btn-primary">Change to Floor 3D Layout</a> -->
+                                            
+                                            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#flow">Flow Diagram of Power
+                                                Supply</button> -->
+
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-xl-3 col-lg-3">
+                                        <h2>Floor Details</h2>
+                                        <div class="floor-details">
+                                            <table id="floorProperty">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Power Capacity: </th>
+                                                        <td> 200 </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Alloted Power: </th>
+                                                        <td> 137 kW</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Available Power: </th>
+                                                        <td> 100 Kw </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Actual Power: </th>
+                                                        <td> 120 Kw </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Actual Available: </th>
+                                                        <td> 123 Kw </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Rack Space Space Capacity: </th>
+                                                        <td> 1235 </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Alloted Rack Space : </th>
+                                                        <td> 1.2 </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Rack Occupied: </th>
+                                                        <td> 9012.08 kWh </td>
+                                                    </tr>
+
+                                                
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="powerStatus">
+                                        <div id="panelConsmp" style="
+                                            width: 100%;
+                                            height: 400px;
+                                            background-color: #282828;
+                                            "></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Content Row -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2022</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <div id="flow" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="public/img/flow chart.png" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+        <!-- Resources -->
+        <script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+        <script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+        <script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/themes/dark.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="public/vendor/jquery/jquery.min.js"></script>
+        <script src="public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="public/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="public/js/sb-admin-2.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="public/vendor/chart.js/Chart.min.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="public/js/demo/chart-area-demo.js"></script>
+        <script src="public/js/demo/chart-pie-demo.js"></script>
+        <script src="public/js/jquery.seat-charts.js"></script>
+        <script>
+            var lastSelectedFloor = document.getElementById("floors").value; // Store initial floor selection
+    var lastSelectedServer = ""; // Store initial server selection
+
+    function updateServers() {
+        var floor = document.getElementById("floors").value;
+        var serverDropdown = document.getElementById("servers");
+
+        // Define servers based on floor selection
+        var servers = {
+            "floor1": [
+                { value: "server1", text: "Server 1" },
+                { value: "server2", text: "Server 2" }
+            ],
+            "floor2": [
+                { value: "server3", text: "Server 3" },
+                { value: "server4", text: "Server 4" }
+            ]
+        };
+
+        // Clear previous options
+        serverDropdown.innerHTML = "";
+
+        // Add new options
+        servers[floor].forEach(server => {
+            var option = document.createElement("option");
+            option.value = server.value;
+            option.textContent = server.text;
+            serverDropdown.appendChild(option);
+        });
+
+        // Reset server selection
+        lastSelectedServer = "";
+    }
+
+    function handleSelectionChange() {
+        var currentFloor = document.getElementById("floors").value;
+        var currentServer = document.getElementById("servers").value;
+
+        // Check if both floor and server are selected and changed
+        if (currentFloor !== lastSelectedFloor && currentServer !== lastSelectedServer) {
+            lastSelectedFloor = currentFloor;
+            lastSelectedServer = currentServer;
+            console.log("Updating data... Floor:", currentFloor, "| Server:", currentServer);
+            // Add your data update function here
+        }
+    }
+
+    // Initialize servers on page load
+    window.onload = function () {
+        updateServers();
+        lastSelectedServer = document.getElementById("servers").value; // Store the initially selected server
+    };
+        </script>
+        <script type="text/JavaScript">
+                var url = "public/assets/rackJSON.json";
+                $.getJSON(url, function (data) {
+                    var rackArray = [];
+                    $.each(data, function (index, value) {
+                      rackArray.push(value.location);
+                        // $.each(this.items, function () {
+                        //     console.log(this.text);
+                        // });
+                    });
+        
+                      
+                    console.log(rackArray)
+                // var rackArray = ["A_1", "A_2", "B_2", "B_4", "C_1", "A_3", "B_1", "C_4", "E_1", "E_2", "E_3", "E_4", "E_5","E_8", "L_1"];
+        
+                var maxArr = [];
+                var charMAx = [];
+                var test = rackArray.reduce((a, i) => {
+                  let [char, num] = i.split('_');
+                  maxArr.push(num);
+                  charMAx.push(char);
+                }, []);
+        
+                var maxValue = Math.max.apply(Math, maxArr);
+                var charMaxVal = charMAx.sort().pop();
+        
+                // creating row
+                function genCharArray(charA, charZ) {
+                    var a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
+                    
+                    for (; i <= j; ++i) {
+                        a.push(String.fromCharCode(i));
+                    }
+                    return a;
+                }
+                var rowChar = genCharArray('A', charMaxVal);
+                // Row array end
+        
+                var reduced = rackArray.reduce((a, i) => {
+                  let [char, num] = i.split('_');
+                  
+                  let charCode = char.charCodeAt(0) - 65;
+                  console.log(charCode);
+        
+                  // find maximam char
+                  if (charCode > a.length) a.length = charCode
+        
+                  // create char arr
+                  if (!a[charCode]) a[charCode] = []
+        
+                  // find maximam num
+                  if (num > a[charCode].length) a[charCode].length = maxValue
+        
+                  // fill arr at index
+                  a[charCode][num - 1] = 'x'
+                  return a
+                }, [])
+        
+                var result = Array.from(reduced).map(char => {
+                  return Array.from(char || []).map(num => num || '_').join('')
+                })
+                var mapData = result;
+        // rack jQuery
+                 var firstSeatLabel = 1;
+                    
+                $(document).ready(function() {
+                    var $cart = $('#selected-seats'),
+                    $counter = $('#counter'),
+                    $total = $('#total'),
+                    sc = $('#seat-map').seatCharts({
+                     map: [
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    'fffff_fffff_fffff_fffff_fffff_fffff',
+                    ],
+                    seats: {
+                    f: {
+                        price   : 100,
+                        classes : 'rack-class', //your custom CSS class
+                        category: 'Blank'
+                    },
+                    e: {
+                        price   : 40,
+                        classes : 'low-class', //your custom CSS class
+                        category: 'Low'
+                    },
+                    d: {
+                        price   : 40,
+                        classes : 'normal-class', //your custom CSS class
+                        category: 'Normal'
+                    } , 
+                    c: {
+                        price   : 100,
+                        classes : 'high-class', //your custom CSS class
+                        category: 'High'
+                    },  
+                    d: {
+                        price   : 100,
+                        classes : 'blue-class', //your custom CSS class
+                        category: 'empty'
+                    },     
+                    
+                    },
+                    naming : {
+                    top : true,
+                        rows: rowChar,
+                        getLabel : function (character, row, column) {
+                            return row+" "+column;
+                        },
+                        getId: function (character, row, column) {
+        return row + "_" + column; // Unique ID without spaces
+    },
+                    },
+
+                    
+                    // legend : {
+                    // node : $('#legend'),
+                    //     items : [
+                    //     [ 'c', 'available',   'High'],
+                    //     [ 'e', 'available',   'Low'],
+                    //     [ 'd', 'available', 'Normal'],
+                    //     [ 'f', 'available', 'Empty']
+                    //     ]         
+                    // },
+                    click: function () {
+                        var sts = this.status();
+                        var stsChck = sts.includes('available');
+                        console.log(sts);
+                        $(".rackProperty td").addClass("showCol");
+                        $(".rackProperty#tempStats").addClass("showCol");
+                        $(".rackProperty#powerStats").addClass("showCol");
+                        $("a.btn.btn-primary.rackLink").addClass("showCol");
+                    if (this.status() == 'available' || this.status() == 'normal-class'|| this.status() == 'blue-class' || this.status() == 'low-class'|| this.status() == 'high-class' && sc.find('selected').length < 1) {
+                        
+                            $(".rackName").html(this.settings.id);
+                            if(this.settings.id == "C_7" || this.settings.id == "F_11" ){
+                                $("#rackStatus").html("Offline");
+                                $("#rackStatus").removeClass("online");
+                                $("#rackStatus").addClass("offline");
+                            } else {
+                                $("#rackStatus").html("Online");
+                                $("#rackStatus").addClass("online");
+                                $("#rackStatus").removeClass("offline");
+                            }
+                            console.log(this.settings.id);
+
+                            if(this.settings.id == "A_3"){
+                                $("#temperatureValue a").html("28°C");
+                                $("#temperatureValue a").addClass("alertDanger");
+                                $("#humidityValue").html("18%");
+                                
+                                $("#powerValue a").html("422 W");
+                                $("#powerValue a").addClass("alertWarning");
+                                $("#powerValue a").removeClass("alertDanger");
+
+                            } 
+                            else if(this.settings.id == "A_1"){
+                                $("#temperatureValue a").html("18°C");
+                                $("#powerValue a").html("239 W");
+                                $("#humidityValue").html("19%");
+                                
+                                $("#powerValue a").removeClass("alertDanger");
+                                $("#powerValue a").addClass("alertWarning");
+                                $("#temperatureValue a").removeClass("alertDanger");
+                                $("#temperatureValue a").removeClass("alertWarning");
+                            }
+                            else if(this.settings.id == "A_2"){
+                                $("#temperatureValue a").html("24°C");
+                                $("#humidityValue").html("20%");
+
+                                $("#temperatureValue a").addClass("alertWarning");
+                                $("#powerValue a").html("530 W");
+                                
+                                $("#powerValue a").removeClass("alertDanger");
+                                $("#powerValue a").removeClass("alertWarning");
+                                $("#temperatureValue a").removeClass("alertDanger");
+                            } else if(this.settings.id == "G_16") {
+                                $("#humidityValue").html("22%");
+                                
+                                $("#powerValue a").html("1200 W");
+                                $("#powerValue a").addClass("alertDanger");
+                                $("#powerValue a").removeClass("alertWarning");
+                                $("#temperatureValue a").removeClass("alertDanger");
+                                $("#temperatureValue a").removeClass("alertWarning");
+                            }  else if(this.settings.id == "A_5") {
+                                $("#humidityValue").html("21%");
+
+                                $("#temperatureValue a").html("16°C");
+                                $("#powerValue a").html("645 W");
+                                $("#powerValue a").removeClass("alertDanger");
+                                $("#powerValue a").removeClass("alertWarning");
+                                 $("#temperatureValue a").removeClass("alertDanger");
+                                  $("#temperatureValue a").removeClass("alertWarning");
+                            }   else if(this.settings.id == "C_7" || this.settings.id == "F_11" ) {
+                                $("#humidityValue").html("-");
+                                $("#voltValue").html("-");
+                                $("#avgValue").html("-");
+
+                                $("#temperatureValue a").html("-");
+                                $("#powerValue a").html("-");
+                                $("#powerValue a").removeClass("alertDanger");
+                                $("#powerValue a").removeClass("alertWarning");
+                                 $("#temperatureValue a").removeClass("alertDanger");
+                                  $("#temperatureValue a").removeClass("alertWarning");
+                            } else {
+                                $("#humidityValue").html("19%");
+                                $("#voltValue").html("120 V");
+
+                                $("#powerValue a").html("640 W");
+                                $("#temperatureValue a").html("17°C");
+                                // $("#powerValue a").html("1.2 kW");
+                                $("#powerValue a").removeClass("alertDanger");
+                                $("#temperatureValue a").removeClass("alertDanger");
+                                
+                                $("#powerValue a").removeClass("alertWarning");
+                                $("#temperatureValue a").removeClass("alertWarning");
+                            }
+                        //  console.log(this.settings);
+                        //let's create a new <li> which we'll add to the cart items
+                        $('<li>'+this.data().category+' Rack # '+this.settings.label+': <b>'+this.data().price+'kW</b> <a href="#" class="cancel-cart-item">[cancel]</a></li>')
+                        .attr('id', 'cart-item-'+this.settings.id)
+                        .data('seatId', this.settings.id)
+                        .appendTo($cart);
+                        
+                        /*
+                        * Lets up<a href="https://www.jqueryscript.net/time-clock/">date</a> the counter and total
+                        *
+                        * .find function will not find the current seat, because it will change its stauts only after return
+                        * 'selected'. This is why we have to add 1 to the length and the current seat price to the total.
+                        */
+                        $counter.text(sc.find('selected').length+1);
+                        $total.text(recalculateTotal(sc)+this.data().price);
+                        if(this.status() !== "selected"){
+                            return this.status();
+                        } else {
+                            return 'selected';
+                        }
+                    } else if (this.status() == 'selected' || stsChck == true) {
+                        //update the counter
+                        $counter.text(sc.find('selected').length-1);
+                        //and total
+                        $total.text(recalculateTotal(sc)-this.data().price);
+                    
+                        //remove the item from our cart
+                        $('#cart-item-'+this.settings.id).remove();
+                    
+                        //seat has been vacated
+                        return 'available';
+                    } else if (this.status() == 'unavailable') {
+                        //seat has been already booked
+                        return 'unavailable';
+                    } else {
+                        return this.style();
+                    }
+                    }
+                    });
+                    $('#seat-map .seatCharts-seat').each(function () {
+                        $(this).append('<span class="seat-hover-text"></span>');
+                    });
+
+                    // Hover event to update hover text dynamically
+                    $('#seat-map').on('mouseenter', '.seatCharts-seat', function () {
+                        var seatId = $(this).attr('id');
+                        $(this).find('.seat-hover-text').text(seatId);
+                    });
+                    //this will handle "[cancel]" link clicks
+                    $('#selected-seats').on('click', '.cancel-cart-item', function () {
+                    //let's just trigger Click event on the appropriate seat, so we don't have to repeat the logic here
+                    sc.get($(this).parents('li:first').data('seatId')).click();
+                    });
+                    
+                    //let's pretend some seats have already been booked
+        
+                    //  sc.get(['A_2', 'B_1', 'D_1', 'D_2']).status('unavailable');
+                    $("#dataTab").change(function() {
+                        var e = document.getElementById("dataTab");
+                        console.log(e)
+                        var strUser = e.options[e.selectedIndex].value;
+                        //console.log("option number " + strUser);
+
+                        //var masud = typeof(strUser);
+                        //console.log(masud);
+                        // $(".content").attr('class','content');
+                        if(strUser == "tempStatusLink"){
+                            sc.get(['A_2', 'B_1','B_2', 'D_1', 'D_2', 'E_19', 'G_8', 'F_15','A_10', 'B_7']).status('low-class');
+                            sc.get(['A_1', 'A_4', 'A_5','A_6','A_7','A_8', 'A_9','A_11','A_12','A_13','A_14','A_15','A_16','A_17','A_18','A_19',
+                             'B_3', 'B_4', 'B_5','B_6', 'B_8', 'B_9', 'B_10','B_11','B_12','B_13','B_14','B_15','B_16','B_17','B_18','B_19',
+                             'C_1', 'C_2', 'C_3', 'C_4', 'C_5','C_6','C_8', 'C_9', 'C_10','C_11','C_12','C_13','C_14','C_15','C_16','C_17','C_18',
+                            'D_3', 'D_4', 'D_5','D_6','D_7','D_8', 'D_9', 'D_10','D_11','D_12','D_13','D_14','D_15','D_16','D_17','D_18', 'D_19',
+                             'E_1', 'E_2', 'E_3', 'E_4', 'E_5','E_6','E_7','E_8', 'E_9', 'E_10','E_11','E_12','E_13','E_14','E_15','E_16','E_17','E_18', 
+                             'F_1', 'F_2', 'F_3', 'F_4', 'F_5','F_6','F_7','F_8', 'F_9', 'F_10','F_12','F_13','F_14','F_16','F_17','F_18','F_19',
+                            'G_1', 'G_2', 'G_3', 'G_4', 'G_5','G_6','G_7', 'G_9', 'G_10','G_11','G_12','G_13','G_14','G_15','G_16','G_17','G_18', 'G_19'
+                        ]).status('blue-class');
+                            sc.get(['A_3']).status('high-class');
+                            $(".brdrBox.floor-details.powerSts").removeClass("visible");
+                            $(".powerStatus").removeClass("visible");
+                            $(".brdrBox.floor-details.tempSts").addClass("visible");
+                            $("#legend").addClass("tempStatusLegend");
+                            $("#legend").removeClass("powerStatusLegend");
+
+                            $(".floorLayout").addClass("tempStatusSec");
+                            $(".floorLayout").removeClass("powerStatusSec");
+
+                        }
+                        if(strUser == "powerStatusLink"){
+                             sc.get(['A_2', 'A_4', 'A_5','A_6','A_7','A_8', 'A_9','A_11','A_12','A_13','A_14','A_15','A_16','A_17','A_18','A_19',
+                             'B_1', 'B_3', 'B_4', 'B_5','B_6', 'B_8', 'B_9', 'B_10','B_11','B_12','B_13','B_14','B_15','B_16','B_17','B_18','B_19',
+                             'C_1', 'C_2', 'C_3', 'C_4', 'C_5','C_6','C_8', 'C_9', 'C_10','C_11','C_12','C_13','C_14','C_15','C_16','C_17','C_18',
+                              'D_1', 'D_2', 'D_3', 'D_4', 'D_3', 'D_4', 'D_5','D_6','D_7','D_8', 'D_9', 'D_10','D_11','D_12','D_13','D_14','D_15','D_16','D_17','D_18', 'D_19',
+                             'E_1', 'E_2', 'E_3', 'E_4', 'E_5','E_6','E_7','E_8', 'E_9', 'E_10','E_11','E_12','E_13','E_14','E_15','E_16','E_17','E_18','E_19', 
+                             'F_1', 'F_2', 'F_3', 'F_4', 'F_5','F_6','F_7','F_8', 'F_9', 'F_10','F_12','F_13','F_14','F_16','F_17','F_18','F_19',
+                            'G_1', 'G_2', 'G_3', 'G_4', 'G_5','G_6','G_7', 'G_9', 'G_10','G_11','G_12','G_13','G_14','G_15','G_16','G_17','G_18', 'G_19'
+                            ]).status('normal-class');
+                            sc.get([ 'G_16']).status('high-class');
+                            sc.get(['A_1', 'B_2', 'D_4','A_3','A_10', 'B_7', 'G_8', 'F_15']).status('low-class');
+                            $(".brdrBox.floor-details.powerSts").addClass("visible");
+                            $(".brdrBox.floor-details.tempSts").removeClass("visible");
+                            $(".powerStatus").removeClass("visible");
+                            $("#legend").addClass("powerStatusLegend");
+                            $("#legend").removeClass("tempStatusLegend");
+
+                            $(".floorLayout").addClass("powerStatusSec");
+                            $(".floorLayout").removeClass("tempStatusSec");
+                        }
+                        if(strUser == "powerDashLink"){
+                            // $("#legend").addClass("option-no-07");
+                            window.location.href = 'cabin.html#full';
+                        }
+                        if(strUser == "coolingStatusLink"){
+                            sc.get(['A_2', 'B_1', 'D_1', 'D_2', 'E_19']).status('high-class');
+                            sc.get(['A_1', 'B_2', 'D_4', 'G_16']).status('low-class');
+                            sc.get(['A_3','A_10', 'B_7', 'G_8', 'F_15']).status('normal-class');
+                            $(".brdrBox.floor-details.powerSts").removeClass("visible");
+                            $(".brdrBox.floor-details.tempSts").removeClass("visible");
+                            $(".powerStatus").removeClass("visible");
+                            $("#legend").addClass("tempStatusLegend");
+                            $("#legend").removeClass("powerStatusLegend");
+                        }
+                        if(strUser == "15"){
+                            $("#legend").addClass("option-no-15");
+                        }
+                        if(strUser == "20"){
+                            $("#legend").addClass("option-no-20");
+                        }
+                    });
+
+
+                    $("#customerFilter").change(function() {
+                        var e = document.getElementById("customerFilter");
+                        console.log(e)
+                        var strUser = e.options[e.selectedIndex].value;
+                        //console.log("option number " + strUser);
+
+                        //var masud = typeof(strUser);
+                        //console.log(masud);
+                        // $(".content").attr('class','content');
+                        if(strUser == "custom1"){
+                            sc.get(['A_2', 'B_1','B_2', 'D_1', 'D_2', 'E_19', 'G_8', 'F_15','A_10', 'B_7']).status('low-class');
+                            sc.get(['A_1', 'A_4', 'A_5','A_6','A_7','A_8', 'A_9','A_11','A_12','A_13','A_14','A_15','A_16','A_17','A_18','A_19',
+                             'B_3', 'B_4', 'B_5','B_6', 'B_8', 'B_9', 'B_10','B_11','B_12','B_13','B_14','B_15','B_16','B_17','B_18','B_19',
+                             'C_1', 'C_2', 'C_3', 'C_4', 'C_5','C_6','C_7','C_8', 'C_9', 'C_10','C_11','C_12','C_13','C_14','C_15','C_16','C_17','C_18',
+                            'D_3', 'D_4', 'D_5','D_6','D_7','D_8', 'D_9', 'D_10','D_11','D_12','D_13','D_14','D_15','D_16','D_17','D_18', 'D_19',
+                             'E_1', 'E_2', 'E_3', 'E_4', 'E_5','E_6','E_7','E_8', 'E_9', 'E_10','E_11','E_12','E_13','E_14','E_15','E_16','E_17','E_18', 
+                             'F_1', 'F_2', 'F_3', 'F_4', 'F_5','F_6','F_7','F_8', 'F_9', 'F_10','F_11','F_12','F_13','F_14','F_16','F_17','F_18','F_19',
+                            'G_1', 'G_2', 'G_3', 'G_4', 'G_5','G_6','G_7', 'G_9', 'G_10','G_11','G_12','G_13','G_14','G_15','G_16','G_17','G_18', 'G_19'
+                        ]).status('hide-class');
+                            sc.get(['A_3']).status('hide-class');
+                            $(".brdrBox.floor-details.powerSts").removeClass("visible");
+                            $(".powerStatus").removeClass("visible");
+                            $(".brdrBox.floor-details.tempSts").addClass("visible");
+                            $("#legend").addClass("tempStatusLegend");
+                            $("#legend").removeClass("powerStatusLegend");
+
+                            $(".floorLayout").addClass("tempStatusSec");
+                            $(".floorLayout").removeClass("powerStatusSec");
+
+                        }
+                        if(strUser == "custom2"){
+                             sc.get(['A_2','A_3', 'A_4', 'A_5','A_6','A_7','A_8', 'A_9','A_10','A_11','A_12','A_13','A_14','A_15','A_16','A_17','A_18','A_19',
+                             'B_1', 'B_2', 'B_3', 'B_4', 'B_5','B_6', 'B_7', 'B_8', 'B_9','B_16','B_17','B_18','B_19',
+                             'C_1', 'C_2', 'C_3', 'C_4', 'C_5','C_6','C_7','C_8', 'C_9', 'C_10','C_11','C_12','C_13','C_14','C_15','C_16','C_17','C_18',
+                              'D_1', 'D_2', 'D_3', 'D_4', 'D_3', 'D_4', 'D_5','D_6','D_7','D_8', 'D_9', 'D_10','D_11','D_12','D_13','D_14','D_15','D_16','D_17','D_18', 'D_19',
+                             'E_1', 'E_2', 'E_3', 'E_4', 'E_5','E_6','E_7','E_8', 'E_9', 'E_10','E_11','E_12','E_13','E_14','E_15','E_16','E_17','E_18','E_19', 
+                             'F_1', 'F_2', 'F_3', 'F_4', 'F_5','F_6','F_7','F_8', 'F_9', 'F_10','F_11','F_12','F_13','F_14', 'F_15','F_16','F_17','F_18','F_19',
+                            'G_1', 'G_2', 'G_3', 'G_4', 'G_5','G_6','G_7', 'G_8', 'G_9', 'G_10','G_11','G_12','G_13','G_14','G_15','G_16','G_17','G_18', 'G_19'
+                            ]).status('hide-class');
+                            sc.get([ 'G_16']).status('hide-class');
+                            sc.get(['B_10', 'B_11', 'B_12','B_13','B_14', 'B_15']).status('low-class');
+                            $(".brdrBox.floor-details.powerSts").addClass("visible");
+                            $(".brdrBox.floor-details.tempSts").removeClass("visible");
+                            $(".powerStatus").removeClass("visible");
+                            $("#legend").addClass("powerStatusLegend");
+                            $("#legend").removeClass("tempStatusLegend");
+
+                            $(".floorLayout").addClass("powerStatusSec");
+                            $(".floorLayout").removeClass("tempStatusSec");
+                        }
+                        // if(strUser == "powerDashLink"){
+                        //     // $("#legend").addClass("option-no-07");
+                        //     window.location.href = 'cabin.html#full';
+                        // }
+                        // if(strUser == "coolingStatusLink"){
+                        //     sc.get(['A_2', 'B_1', 'D_1', 'D_2', 'E_19']).status('high-class');
+                        //     sc.get(['A_1', 'B_2', 'D_4', 'G_16']).status('low-class');
+                        //     sc.get(['A_3','A_10', 'B_7', 'G_8', 'F_15']).status('normal-class');
+                        //     $(".brdrBox.floor-details.powerSts").removeClass("visible");
+                        //     $(".brdrBox.floor-details.tempSts").removeClass("visible");
+                        //     $(".powerStatus").removeClass("visible");
+                        //     $("#legend").addClass("tempStatusLegend");
+                        //     $("#legend").removeClass("powerStatusLegend");
+                        // }
+                        if(strUser == "15"){
+                            $("#legend").addClass("option-no-15");
+                        }
+                        if(strUser == "20"){
+                            $("#legend").addClass("option-no-20");
+                        }
+                    })
+
+
+                    $(function () {
+                        $("a.btn.btn-danger.btn-icon-split.tempbtn").click(function () {
+                                $('#dataTab').val('tempStatusLink').trigger('change');
+                            
+                        });
+                         $("a.btn.btn-danger.btn-icon-split.powerbtn").click(function () {
+                                $('#dataTab').val('powerStatusLink').trigger('change');
+                            
+                        })
+                            var hash = $(location).attr('hash').substr(1);
+
+                            var j;
+                            // alert(hash);
+                            if(hash == "powerSts"){
+                                $('#dataTab').val('powerStatusLink').trigger('change');
+                            }
+                            else if(hash == "tempSts"){
+                                $('#dataTab').val('powerStatusLink').trigger('change');
+                            }
+                    });
+                    $('.dataTab option[id="tempStatusLink"]').change(function(params) {
+                        sc.get(['A_2', 'B_1', 'D_1', 'D_2']).status('low-class');
+                         sc.get(['A_1', 'A_4', 'A_5','A_6','A_7','A_8', 'A_9','A_11','A_12','A_13','A_14','A_15','A_16','A_17','A_18','A_19',
+                             'B_3', 'B_4', 'B_5','B_6', 'B_8', 'B_9', 'B_10','B_11','B_12','B_13','B_14','B_15','B_16','B_17','B_18','B_19',
+                             'C_1', 'C_2', 'C_3', 'C_4', 'C_5','C_6','C_8', 'C_9', 'C_10','C_11','C_12','C_13','C_14','C_15','C_16','C_17','C_18',
+                            'D_3', 'D_4', 'D_5','D_6','D_7','D_8', 'D_9', 'D_10','D_11','D_12','D_13','D_14','D_15','D_16','D_17','D_18', 'D_19',
+                             'E_1', 'E_2', 'E_3', 'E_4', 'E_5','E_6','E_7','E_8', 'E_9', 'E_10','E_11','E_12','E_13','E_14','E_15','E_16','E_17','E_18', 
+                             'F_1', 'F_2', 'F_3', 'F_4', 'F_5','F_6','F_7','F_8', 'F_9', 'F_10','F_12','F_13','F_14','F_16','F_17','F_18','F_19',
+                            'G_1', 'G_2', 'G_3', 'G_4', 'G_5','G_6','G_7', 'G_9', 'G_10','G_11','G_12','G_13','G_14','G_15','G_16','G_17','G_18', 'G_19'
+                        ]).status('blue-class');
+                        sc.get(['A_3','A_10', 'B_7', 'D_8', 'D_9']).status('high-class');
+                        $(".brdrBox.floor-details.powerSts").removeClass("visible");
+                        $(".powerStatus").removeClass("visible");
+                        $(".brdrBox.floor-details.tempSts").addClass("visible");
+                        // sc.status(['A_3','A_10', 'B_7', 'D_8', 'D_9'],'');
+        
+                    });
+        
+                        $('.dataTab option[id="powerStatusLink"]').change(function(params) {
+                             sc.get(['A_2', 'A_4', 'A_5','A_6','A_7','A_8', 'A_9','A_11','A_12','A_13','A_14','A_15','A_16','A_17','A_18','A_19',
+                             'B_1', 'B_3', 'B_4', 'B_5','B_6', 'B_8', 'B_9', 'B_10','B_11','B_12','B_13','B_14','B_15','B_16','B_17','B_18','B_19',
+                             'C_1', 'C_2', 'C_3', 'C_4', 'C_5','C_6','C_8', 'C_9', 'C_10','C_11','C_12','C_13','C_14','C_15','C_16','C_17','C_18',
+                              'D_1', 'D_2', 'D_3', 'D_4', 'D_3', 'D_4', 'D_5','D_6','D_7','D_8', 'D_9', 'D_10','D_11','D_12','D_13','D_14','D_15','D_16','D_17','D_18', 'D_19',
+                             'E_1', 'E_2', 'E_3', 'E_4', 'E_5','E_6','E_7','E_8', 'E_9', 'E_10','E_11','E_12','E_13','E_14','E_15','E_16','E_17','E_18','E_19', 
+                             'F_1', 'F_2', 'F_3', 'F_4', 'F_5','F_6','F_7','F_8', 'F_9', 'F_10','F_12','F_13','F_14','F_16','F_17','F_18','F_19',
+                            'G_1', 'G_2', 'G_3', 'G_4', 'G_5','G_6','G_7', 'G_9', 'G_10','G_11','G_12','G_13','G_14','G_15','G_16','G_17','G_18', 'G_19'
+                            ]).status('normal-class');
+                            sc.get(['A_1', 'B_2', 'D_4', 'D_5']).status('high-class');
+                            sc.get(['A_3','A_10', 'B_7', 'D_8', 'D_9']).status('low-class');
+                            $(".brdrBox.floor-details.powerSts").addClass("visible");
+                            $(".brdrBox.floor-details.tempSts").removeClass("visible");
+                            $(".powerStatus").removeClass("visible");
+                            // sc.status(['A_3','A_10', 'B_7', 'D_8', 'D_9'],'');
+                        });
+
+                        $('.dataTab option[id="coolingStatusLink"]').change(function(params) {
+                            sc.get(['A_2', 'B_1', 'D_1', 'D_2', 'E_19']).status('high-class');
+                            sc.get(['A_1', 'B_2', 'D_4', 'G_16']).status('low-class');
+                            sc.get(['A_3','A_10', 'B_7', 'G_8', 'F_15']).status('normal-class');
+                            $(".brdrBox.floor-details.powerSts").removeClass("visible");
+                            $(".brdrBox.floor-details.tempSts").removeClass("visible");
+                            $(".powerStatus").removeClass("visible");
+                            // sc.status(['A_3','A_10', 'B_7', 'D_8', 'D_9'],'');
+                        });
+                    });
+                    
+                    function recalculateTotal(sc) {
+                    var total = 0;
+                    
+                    //basically find every selected seat and sum its price
+                    sc.find('selected').each(function () {
+                    total += this.data().price;
+                    });
+                    
+                    return total;
+                    }
+        
+                    
+                });
+
+                
+            </script>
+         <script>
+            var el = document.querySelector('.more');
+            var btn = el.querySelector('.more-btn');
+            var menu = el.querySelector('.more-menu');
+            var visible = false;
+
+            function showMenu(e) {
+                e.preventDefault();
+                if (!visible) {
+                    visible = true;
+                    el.classList.add('show-more-menu');
+                    menu.setAttribute('aria-hidden', false);
+                    document.addEventListener('click', hideMenu, false);
+                }
+            }
+
+            function hideMenu(e) {
+                // console.log(e)
+                if (btn.contains(e.target)) {
+                    return;
+                }
+                if (visible) {
+                    visible = false;
+                    el.classList.remove('show-more-menu');
+                    menu.setAttribute('aria-hidden', true);
+                    document.removeEventListener('mousedown', hideMenu);
+                }
+            }
+
+            btn.addEventListener('click', showMenu, false);
+            
+            $('#A_1').trigger('click');
+
+            $(function () {
+                    var hash = $(location).attr('hash').substr(1);
+
+                    var j;
+                    // alert(hash);
+                    if (hash == "powerSts") {
+                        $('#dataTab').val('powerStatusLink').trigger('change');
+                    }
+                    else if (hash == "tempSts") {
+                        $('#dataTab').val('powerStatusLink').trigger('change');
+                    }
+                     
+                });
+
+               
+        </script>
+    </body>
+
+</html>
