@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rack Space YOY Growth Chart</title>
+
+    <!-- amCharts Library -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <!-- SheetJS for Excel Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+
+    <!-- jsPDF & AutoTable for PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 500px;
+        }
+        .export-buttons {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Rack Space YOY Growth</h2>
+    <div id="chartdiv"></div>
+
+    <div class="export-buttons">
+        <button onclick="exportToExcel()">Download as Excel</button>
+        <button onclick="exportToPDF()">Download as PDF</button>
+    </div>
+
+    <script>
+        // Chart Data
+        let chartData = [
+            { year: "2019-2020", rack_space: 100, yoy_growth: 5 },
+            { year: "2020-2021", rack_space: 120, yoy_growth: 7 },
+            { year: "2021-2022", rack_space: 140, yoy_growth: 10 },
+            { year: "2022-2023", rack_space: 160, yoy_growth: 8 },
+            { year: "2023-2024", rack_space: 180, yoy_growth: 9 },
+            { year: "2024-2025", rack_space: 200, yoy_growth: 11 }
+        ];
+
+        // Create amCharts Chart
+        am5.ready(function() {
+            let root = am5.Root.new("chartdiv");
+            root.setThemes([ am5themes_Animated.new(root) ]);
+
+            let chart = root.container.children.push(am5xy.XYChart.new(root, {
+                panX: true,
+                panY: true,
+                wheelX: "panX",
+                wheelY: "zoomX",  // Zoom In & Out using Scroll
+                pinchZoomX: true  // Enable Pinch Zoom on Touchscreens
+            }));
+
+            let xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+                categoryField: "year",
+                renderer: am5xy.AxisRendererX.new(root, {})
+            }));
+
+            let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                renderer: am5xy.AxisRendererY.new(root, {})
+            }));
+
+            let series1 = chart.series.push(am5xy.LineSeries.new(root, {
+                name: "No of Rack Space",
+                xAxis: xAxis,
+                yAxis: yAxis,
+                valueYField: "rack_space",
+                categoryXField: "year",
+                tooltip: am5.Tooltip.new(root, { labelText: "{name}: {valueY}" })
+            }));
+
+            let series2 = chart.series.push(am5xy.LineSeries.new(root, {
+                name: "YOY Growth",
+                xAxis: xAxis,
+                yAxis: yAxis,
+                valueYField: "yoy_growth",
+                categoryXField: "year",
+                tooltip: am5.Tooltip.new(root, { labelText: "{name}: {valueY}" })
+            }));
+
+            // Enable Zooming & Panning
+            let cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+                behavior: "zoomX"  // Click & Drag to Zoom
+            }));
+
+            xAxis.data.setAll(chartData);
+            series1.data.setAll(chartData);
+            series2.data.setAll(chartData);
+        });
+
+        // Export to Excel
+        function exportToExcel() {
+            let ws = XLSX.utils.aoa_to_sheet([
+                ["Year", "No of Rack Space", "YOY Growth (%)"],
+                ...chartData.map(row => [row.year, row.rack_space, row.yoy_growth])
+            ]);
+
+            let wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Rack_Space_Report");
+            XLSX.writeFile(wb, "Rack_Space_Report.xlsx");
+        }
+
+        // Export to PDF
+        function exportToPDF() {
+            const { jsPDF } = window.jspdf;
+            let doc = new jsPDF();
+            doc.text("Rack Space YOY Growth Report", 10, 10);
+
+            let tableData = chartData.map(row => [row.year, row.rack_space, row.yoy_growth]);
+
+            doc.autoTable({
+                head: [["Year", "No of Rack Space", "YOY Growth (%)"]],
+                body: tableData,
+                startY: 20
+            });
+
+            doc.save("Rack_Space_Report.pdf");
+        }
+    </script>
+
+</body>
+</html>
